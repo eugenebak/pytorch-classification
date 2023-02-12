@@ -1,0 +1,41 @@
+
+
+PROJECT: pytorch-classification
+EXP: cifar100-resnet18
+RESULT_PATH: ./results
+
+NUM_WORKERS: 2
+GPU: 0
+
+# Network configurations
+CLASSIFIER: resnet18
+
+# Dataset
+DATASET: cifar100
+TRAIN_SUBSAMPLE: 1.0
+NUM_CLASS: 100
+
+TRAIN:
+    EPOCHS: 200
+    BATCH_SIZE: 128
+    EVAL_BATCH_SIZE: 256
+    SEED: 1
+    
+    # Optim
+    LR: 1.0e-1
+    MOMENTUM: 0.9
+    WEIGHT_DECAY: 5.0e-4
+    
+    # Log
+    PRINT_FREQ: 20
+    EVAL_FREQ: 100
+    
+    # Miscellaneous
+    RESUME_EPOCH: null
+    TEST_SUBSAMPLE: 0.025
+    
+TEST:
+    BATCH_SIZE: 256
+    SEED: 1
+    TEST_SUBSAMPLE: 1.0
+    CKPT_PATH: null
